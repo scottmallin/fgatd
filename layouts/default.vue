@@ -19,10 +19,10 @@
         methods: {
             checkIfLive() {
                 this.$axios({
-                  url: 'https://api.twitch.tv/helix/search/channels?query=rtgamecrowd',
+                  url: 'https://api.twitch.tv/helix/search/channels?query=frankgamesandthedisasters',
                   method: 'get',
                   headers: {
-                    'client-id': 'ly02f7bvldlkfnpf9wr453c55nmdhl',
+                    'client-id': `${process.env.CLIENT_ID}`,
                     'Authorization': 'Bearer ' + this.twAccToken
                   }
                 }).then(response => {
@@ -32,7 +32,7 @@
             }
         },
         async mounted () {
-            await this.$axios.post('https://id.twitch.tv/oauth2/token?client_id=ly02f7bvldlkfnpf9wr453c55nmdhl&client_secret=rny3pkbw5beqhzw6kohben5ioixnqz&grant_type=client_credentials')
+            await this.$axios.post(`https://id.twitch.tv/oauth2/token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.SECRET}&grant_type=client_credentials`)
               .then(response => {
                 this.twAccToken = response.data.access_token
               })
