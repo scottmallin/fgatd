@@ -1,0 +1,12 @@
+body, html {
+    @apply bg-dark;
+    @apply text-primary;
+    @apply font-sans;
+}
+
+.user-view {
+    @apply h-screen flex;
+    nav + div {
+        @apply w-full;
+    }
+}
