@@ -1,12 +1,32 @@
 body, html {
-    @apply bg-dark;
     @apply text-primary;
     @apply font-sans;
+}
+
+body {
+    background-image: linear-gradient(rgba($dark, 0.9), rgba($dark, 0.9)), url('/bg.jpg');
+
+    @apply bg-center;
+    @apply bg-cover;
+}
+
+h1 {
+    font-size: 3rem;
+
+    @apply leading-loose;
+}
+
+p {
+    @apply leading-loose;
+    + p {
+        @apply mt-6;
+    }
 }
 
 .user-view {
     @apply h-screen flex;
     nav + div {
         @apply w-full;
+        @apply py-12;
     }
 }

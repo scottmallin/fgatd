@@ -9,12 +9,21 @@
           <div class="row nav-links">
               <div class="col-12">
                   <ul>
-                      <li><NuxtLink to="/">Home</NuxtLink></li>
-                      <li><NuxtLink to="/releases">Releases</NuxtLink></li>
-                      <li><a href="https://frankgrimesandthedisasters.bigcartel.com/" target="_blank">Store</a></li>
-                      <li v-if="this.isLive"><a href="https://www.twitch.tv/frankgamesandthedisasters" target="_blank">Frank Games</a></li>
-                      <li v-else><a href="https://www.twitch.tv/frankgamesandthedisasters" target="_blank">Frank Games :(</a></li>
-                      <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+                      <li><NuxtLink class="nav-link" to="/"><home-icon/> Home</NuxtLink></li>
+                      <li><NuxtLink class="nav-link" to="/releases"><music-icon/> Releases</NuxtLink></li>
+                      <li><a class="nav-link" href="https://frankgrimesandthedisasters.bigcartel.com/" target="_blank"><shopping-bag-icon/> Store</a></li>
+                      <li v-if="this.isLive">
+                          <a class="nav-link" href="https://www.twitch.tv/frankgamesandthedisasters" target="_blank">
+                            <twitch-icon/> 
+                            Frank Games 
+                            <span class="nav-link__live-now">
+                                <video-icon size="16" class="nav-link__live-icon"/>
+                                We're live
+                            </span>
+                        </a>
+                      </li>
+                      <li v-else><a class="nav-link" href="https://www.twitch.tv/frankgamesandthedisasters" target="_blank"><twitch-icon/> Frank Games</a></li>
+                      <li><NuxtLink class="nav-link" to="/contact"><mail-icon/> Contact</NuxtLink></li>
                   </ul>
               </div>
           </div>

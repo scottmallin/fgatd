@@ -5,19 +5,21 @@
   </div>
 </template>
 <script>
+
   export default {
         data () {
             return {
-              twAuthResponse: '',
               twAccToken: '',
               twData: '',
-              isLive: Boolean
+              isLive: {
+                type: Boolean
+              }
             }
         },
         methods: {
             checkIfLive() {
                 this.$axios({
-                  url: 'https://api.twitch.tv/helix/search/channels?query=frankgamesandthedisasters',
+                  url: 'https://api.twitch.tv/helix/search/channels?query=rtgamecrowd',
                   method: 'get',
                   headers: {
                     'client-id': 'ly02f7bvldlkfnpf9wr453c55nmdhl',
@@ -32,9 +34,7 @@
         async mounted () {
             await this.$axios.post('https://id.twitch.tv/oauth2/token?client_id=ly02f7bvldlkfnpf9wr453c55nmdhl&client_secret=rny3pkbw5beqhzw6kohben5ioixnqz&grant_type=client_credentials')
               .then(response => {
-                this.twAuthResponse = response
                 this.twAccToken = response.data.access_token
-                console.log('gotty')
               })
             this.checkIfLive()
         }

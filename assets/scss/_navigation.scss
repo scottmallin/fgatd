@@ -1,4 +1,39 @@
 nav {
-    max-width: 300px;
+    @apply bg-dark;
     @apply py-12;
+
+    max-width: 300px;
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0 }
+    50% { opacity: 1 }
+} 
+
+.nav-links {
+    @apply pt-12;
+}
+
+.nav-link {
+    @apply flex;
+    @apply items-center;
+    @apply py-1;
+
+    min-height: 45px;
+    svg {
+        @apply mr-3;
+    }
+    &__live-now {
+        @apply bg-green-500;
+        @apply text-white;
+        @apply flex;
+        @apply items-center;
+        @apply rounded-full;
+        @apply py-1;
+        @apply px-2;
+        @apply ml-3;
+    }
+    &__live-icon {
+        animation: fade 1.3s linear infinite;
+    }
 }
