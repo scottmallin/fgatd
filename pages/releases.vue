@@ -4,7 +4,11 @@
       <div class="row">
         <div class="col-8 offset-2">
           <h1 class="page-heading">Releases</h1>
-          <p>Bangers</p>
+          <div class="row">
+            <album title="Set Fire to Me (Happy Xmas)" artwork="/fire.jpg" />
+            <album title="Rain At Your Funeral" artwork="/rain.jpg" />
+            <album title="Frank Grimes And The Disasters" artwork="/ep1.jpg" />
+          </div>
         </div>
       </div>
     </div>

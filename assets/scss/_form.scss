@@ -1,0 +1,31 @@
+.form-row {
+    input, textarea, label {
+        @apply block;
+        @apply w-full;
+    }
+
+    input, textarea {
+        @apply bg-primary;
+        @apply border-primary;
+        @apply border;
+        @apply p-2;
+        @apply text-dark;
+    }
+
+    label {
+        @apply mb-2;
+    }
+
+    .button {
+        @apply bg-dark;
+        @apply text-primary;
+        @apply ml-auto;
+        @apply mr-0;
+
+        max-width: 170px;
+    }
+
+    + .form-row {
+        @apply pt-6;
+    }
+}

@@ -28,5 +28,12 @@ p {
     nav + div {
         @apply w-full;
         @apply py-12;
+        
+        .container {
+            @apply py-12;
+            
+            max-height: 100vh;
+            overflow: auto;
+        }
     }
 }

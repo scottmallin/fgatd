@@ -37,3 +37,7 @@ nav {
         animation: fade 1.3s linear infinite;
     }
 }
+
+.nuxt-link-exact-active {
+    @apply text-secondary;
+}

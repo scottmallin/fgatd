@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'fgatd',
+    title: 'Frank Grimes & The Disasters',
     htmlAttrs: {
       lang: 'en',
     },
@@ -42,8 +42,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -58,6 +57,11 @@ export default {
       'Client-ID': 'ly02f7bvldlkfnpf9wr453c55nmdhl',
       'Secret': 'rny3pkbw5beqhzw6kohben5ioixnqz'
     }
+  },
+
+  publicRuntimeConfig: {
+    clientID: process.env.CLIENT_ID,
+    secret: process.env.SECRET
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
