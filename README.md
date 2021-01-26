@@ -1,4 +1,7 @@
-# fgatd
+# Frank Grimes & The Disasters Website
+
+My band! Built with Vue, Nuxt & Tailwind
+There was a nifty twitch widget in here too, but because of hosting limitations it was removed.
 
 ## Build Setup
 
