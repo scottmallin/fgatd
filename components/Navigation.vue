@@ -108,7 +108,9 @@
         },
         watch: {
             '$route.path': function() {
-                this.toggleNav()
+                if (window.innerWidth < 1024) {
+                    this.toggleNav()
+                }
             }
         }
     }
