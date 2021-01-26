@@ -13,7 +13,8 @@ body {
 h1 {
     font-size: 3rem;
 
-    @apply leading-loose;
+    @apply leading-tight;
+    @apply mb-8;
 }
 
 p {
@@ -24,7 +25,11 @@ p {
 }
 
 .user-view {
-    @apply h-screen flex;
+    @apply h-screen;
+    @screen lg {
+        @apply flex;
+    }
+
     nav + div {
         @apply w-full;
         @apply py-12;
@@ -33,7 +38,9 @@ p {
             @apply py-12;
             
             max-height: 100vh;
-            overflow: auto;
+            @screen lg {
+                overflow: auto;
+            }
         }
     }
 }

@@ -1,16 +1,56 @@
 nav {
     @apply bg-dark;
-    @apply py-12;
+    @apply w-full;
+    @apply py-4;
 
-    max-width: 300px;
+    @screen lg {
+        @apply py-12;
+
+        max-width: 300px;
+    }
 }
 
 @keyframes fade {
     0%, 100% { opacity: 0 }
     50% { opacity: 1 }
-} 
+}
+
+.nav-logo {
+    @apply flex;
+    @apply justify-between;
+
+    &__image {
+        max-width: 150px;
+
+        @screen lg {
+            max-width: 100%;
+        }
+    }
+    &__toggle {
+        @screen lg {
+            @apply hidden;
+        }
+
+        @apply outline-none;
+
+        span {
+            @apply block;
+            @apply bg-primary;
+
+            width: 30px;
+            height: 2px;
+            + span {
+                @apply mt-2;
+            }
+        }
+    }
+}
 
 .nav-links {
+    @screen lg {
+        display: block !important;
+    }
+    @apply hidden;
     @apply pt-12;
 }
 
