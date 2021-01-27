@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <h1 class="page-heading">Contact us</h1>
-    <form method="post" netlify>
+    <form name="contact" method="POST" data-netlify="true">
       <div class="form-row">
         <label for="form_name">Name:</label>
         <input type="text" name="name" id="form_name">
@@ -15,7 +15,7 @@
         <textarea name="message" id="form_message" rows="10"></textarea>
       </div>
       <div class="form-row">
-        <input class="button button--primary" type="submit" value="Send">
+        <button class="button button--primary" type="submit">Send</button>
       </div>
     </form>
   </content-wrapper>

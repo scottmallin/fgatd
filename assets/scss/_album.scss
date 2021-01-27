@@ -2,4 +2,34 @@
     @apply bg-transparent;
 
     margin-bottom: 30px;
+
+    &__wrapper {
+        @apply relative;
+        @apply border;
+        @apply border-primary;
+    }
+
+    &__info {
+        @apply absolute;
+        @apply top-0;
+        @apply left-0;
+        @apply w-full;
+        @apply h-full;
+        @apply flex;
+        @apply items-center;
+        @apply justify-center;
+        @apply bg-dark;
+        @apply bg-opacity-75;
+        @apply p-3;
+        @apply text-center;
+
+        ul li a{
+            @apply block;
+            @apply p-1;
+        }
+    }
+
+    &__title {
+        @apply text-xl;
+    }
 }

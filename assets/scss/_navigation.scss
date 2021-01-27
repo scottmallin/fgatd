@@ -78,6 +78,12 @@ nav {
     }
 }
 
+.nav-social-links {
+    @apply pt-12;
+    @apply flex;
+    @apply justify-evenly;
+}
+
 .nuxt-link-exact-active {
     @apply text-secondary;
 }

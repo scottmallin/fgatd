@@ -1,27 +1,40 @@
 <template>
-  <nav>
-      <div class="container">
-          <div class="row">
-              <div class="col-12 nav-logo">
-                  <img class="nav-logo__image" src="~/assets/images/logo.png" alt="Frank Grimes & The Disasters">
-                  <button class="nav-logo__toggle" :class="this.navOpen ? 'nav-logo__toggle--active' : '' " @click="toggleNav()">
-                      <span class="nav-logo__toggle-line"></span>
-                      <span class="nav-logo__toggle-line"></span>
-                      <span class="nav-logo__toggle-line"></span>
-                  </button>
-              </div>
-              <div id="menu" class="col-12 nav-links" :class="this.navOpen ? 'nav-links--open' : '' ">
-                  <ul>
-                      <li><NuxtLink class="nav-link" to="/"><home-icon/> Home</NuxtLink></li>
-                      <li><NuxtLink class="nav-link" to="/releases"><music-icon/> Releases</NuxtLink></li>
-                      <li><a class="nav-link" href="https://frankgrimesandthedisasters.bigcartel.com/" target="_blank"><shopping-bag-icon/> Store</a></li>
-                      <li><a class="nav-link" href="https://www.twitch.tv/frankgamesandthedisasters" target="_blank"><twitch-icon/> Frank Games</a></li>
-                      <li><NuxtLink class="nav-link" to="/contact"><mail-icon/> Contact</NuxtLink></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </nav>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 nav-logo">
+                    <NuxtLink class="nav-link" to="/">
+                        <img class="nav-logo__image" src="~/assets/images/logo.png" alt="Frank Grimes & The Disasters">
+                    </NuxtLink>
+                    <button class="nav-logo__toggle" :class="this.navOpen ? 'nav-logo__toggle--active' : '' " @click="toggleNav()">
+                        <span class="nav-logo__toggle-line"></span>
+                        <span class="nav-logo__toggle-line"></span>
+                        <span class="nav-logo__toggle-line"></span>
+                    </button>
+                </div>
+                <div id="menu" class="col-12 nav-links" :class="this.navOpen ? 'nav-links--open' : '' ">
+                    <ul>
+                        <li><NuxtLink class="nav-link" to="/"><home-icon/> Home</NuxtLink></li>
+                        <li><NuxtLink class="nav-link" to="/releases"><music-icon/> Releases</NuxtLink></li>
+                        <li><a class="nav-link" rel="noopener noreferrer" href="https://frankgrimesandthedisasters.bigcartel.com/" target="_blank"><shopping-bag-icon/> Store</a></li>
+                        <li><a class="nav-link" rel="noopener noreferrer" href="https://www.twitch.tv/frankgamesandthedisasters" target="_blank"><twitch-icon/> Frank Games</a></li>
+                        <li><NuxtLink class="nav-link" to="/contact"><mail-icon/> Contact</NuxtLink></li>
+                    </ul>
+                    <ul class="nav-social-links">
+                        <li>
+                            <a href="https://www.facebook.com/frankgrimesandthedisasters" target="_blank" rel="noopener noreferrer"><fb-icon/></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/frankgrimesandthedisasters" target="_blank" rel="noopener noreferrer"><ig-icon/></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/andthedisasters" target="_blank" rel="noopener noreferrer"><tw-icon/></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 </template>
 
 <style lang="scss" scoped>
@@ -109,7 +122,7 @@
         watch: {
             '$route.path': function() {
                 if (window.innerWidth < 1024) {
-                    this.toggleNav()
+                    this.slideUp(document.getElementById('menu'), 200)
                 }
             }
         }
