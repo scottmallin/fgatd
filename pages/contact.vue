@@ -1,20 +1,20 @@
 <template>
   <content-wrapper>
     <h1 class="page-heading">Contact us</h1>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" action="/success" data-netlify="true">
       <div class="form-row">
         <label for="form_name">Name:</label>
-        <input type="text" name="name" id="form_name">
+        <input type="text" name="name" id="form_name" required>
       </div>
       <div class="form-row">
         <label for="form_email">Email:</label>
-        <input type="email" name="email" id="form_email">
+        <input type="email" name="email" id="form_email" required>
       </div>
       <div class="form-row">
         <label for="form_message">Message:</label>
-        <textarea name="message" id="form_message" rows="10"></textarea>
+        <textarea name="message" id="form_message" rows="10" minlength="50" required></textarea>
       </div>
-      <div class="form-row">
+      <div class="form-row flex">
         <button class="button button--primary" type="submit">Send</button>
       </div>
     </form>

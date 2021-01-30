@@ -8,7 +8,7 @@ body {
 
     @apply bg-center;
     @apply bg-cover;
-    @apply bg-fixed;
+    @apply bg-no-repeat;
 }
 
 h1 {
@@ -23,25 +23,49 @@ p {
     + p {
         @apply mt-6;
     }
+    a {
+        @apply text-secondary;
+    }
 }
 
 .user-view {
-    @apply h-screen;
     @screen lg {
-        @apply flex;
+        @apply h-screen;
+
+        display: grid;
+            grid-template-columns: minmax(0, 300px) 1fr;
+            grid-template-rows: 1fr min-content;
+            gap: 0 0;
+            grid-template-areas:
+                "nav content"
+                "nav footer";
     }
 
-    nav + div {
-        @apply w-full;
-        @apply py-12;
-        
-        .container {
+    nav {
+        grid-area: nav;
+
+        + div {
+            @apply w-full;
             @apply py-12;
+
+            grid-area: content;
             
-            max-height: 100vh;
-            @screen lg {
-                overflow: auto;
+            .container {
+                @apply py-12;
+                
+                @screen lg {
+                    max-height: 100vh;
+                    overflow: auto;
+                }
             }
         }
+    }
+
+    .site-footer {
+        @apply bg-dark;
+        @apply py-3;
+        @apply text-sm;
+
+        grid-area: footer;
     }
 }

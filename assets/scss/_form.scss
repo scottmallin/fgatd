@@ -17,12 +17,19 @@
     }
 
     .button {
+        @apply border;
+        @apply border-primary;
         @apply bg-dark;
         @apply text-primary;
         @apply ml-auto;
         @apply mr-0;
+        @apply inline-block;
+        @apply text-center;
+        @apply p-3;
 
-        max-width: 170px;
+        @screen lg {
+            min-width: 170px;
+        }
     }
 
     + .form-row {

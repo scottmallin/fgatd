@@ -14,14 +14,9 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'The official Frank Grimes & The Disasters website' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      {
-        src: "https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js",
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -30,7 +25,10 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/feather'],
+  plugins: [
+    '@/plugins/feather',
+    '@/plugins/cookie-law'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,14 +40,20 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/pwa'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/gtm'
   ],
+
+  gtm: {
+    id: 'GTM-XXXXXXX', // Used as fallback if no runtime config is provided
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -61,7 +65,10 @@ export default {
 
   publicRuntimeConfig: {
     clientID: process.env.CLIENT_ID,
-    secret: process.env.SECRET
+    secret: process.env.SECRET,
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

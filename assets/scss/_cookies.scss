@@ -1,0 +1,27 @@
+.Cookie {
+    &--fgatd {
+        @apply bg-primary;
+        @apply text-dark;
+        @apply px-3;
+        @apply py-5;
+    }
+    &__buttons {
+        @apply w-full;
+
+        @screen md {
+            @apply w-auto;
+        }
+    }
+    &__button {
+        @apply bg-dark;
+        @apply text-primary;
+        @apply text-center;
+        @apply p-3;
+
+        min-width: 100%;
+
+        @screen lg {
+            min-width: 170px;
+        }
+    }
+}

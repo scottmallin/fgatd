@@ -6,7 +6,7 @@
                     <NuxtLink class="nav-link" to="/">
                         <img class="nav-logo__image" src="~/assets/images/logo.png" alt="Frank Grimes & The Disasters">
                     </NuxtLink>
-                    <button class="nav-logo__toggle" :class="this.navOpen ? 'nav-logo__toggle--active' : '' " @click="toggleNav()">
+                    <button class="nav-logo__toggle" aria-label="Toggle navigation" :class="this.navOpen ? 'nav-logo__toggle--active' : '' " @click="toggleNav()">
                         <span class="nav-logo__toggle-line"></span>
                         <span class="nav-logo__toggle-line"></span>
                         <span class="nav-logo__toggle-line"></span>
