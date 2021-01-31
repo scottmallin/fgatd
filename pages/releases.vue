@@ -30,5 +30,37 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  head() {
+    return {
+      title: 'Releases / Frank Grimes & The Disasters',
+      meta: [
+          { property: "og:site_name", content: "Frank Grimes & The Disasters" },
+          { hid: "og:type", property: "og:type", content: "website" },
+          {
+            hid: "og:url",
+            property: "og:url",
+            content: "https://www.frankgrimesandthedisasters.co.uk/releases",
+          },
+          {
+            hid: "og:title",
+            property: "og:title",
+            content: "Frank Grimes & The Disasters releases",
+          },
+          {
+            hid: "og:description",
+            property: "og:description",
+            content: "Punk Rock from Barnsley, South Yorkshire.",
+          },
+          {
+            hid: "og:image",
+            property: "og:image",
+            content: "/og.jpg",
+          },
+          { property: "og:image:width", content: "1200" },
+          { property: "og:image:height", content: "630" },
+      ]
+    }
+  }
+})
 </script>

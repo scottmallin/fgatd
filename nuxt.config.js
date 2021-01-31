@@ -51,8 +51,16 @@ export default {
     '@nuxtjs/gtm'
   ],
 
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    beforeEnter (el) {
+      console.log('Before enter...');
+    }
+  },
+
   gtm: {
-    id: 'GTM-XXXXXXX', // Used as fallback if no runtime config is provided
+    id: process.env.GOOGLE_TAG_MANAGER_ID, // Used as fallback if no runtime config is provided
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -64,8 +72,6 @@ export default {
   },
 
   publicRuntimeConfig: {
-    clientID: process.env.CLIENT_ID,
-    secret: process.env.SECRET,
     gtm: {
       id: process.env.GOOGLE_TAG_MANAGER_ID
     }

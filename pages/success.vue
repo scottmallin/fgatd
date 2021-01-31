@@ -10,7 +10,6 @@ import Vue from 'vue'
 import ContentWrapper from '~/components/ContentWrapper.vue'
 
 export default Vue.extend({
-  components: { ContentWrapper },
-  transition: 'home'
+  components: { ContentWrapper }
 })
 </script>

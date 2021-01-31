@@ -26,8 +26,11 @@
         @apply inline-block;
         @apply text-center;
         @apply p-3;
+        @apply w-full;
 
         @screen lg {
+            @apply w-auto;
+            
             min-width: 170px;
         }
     }
