@@ -72,6 +72,8 @@ export default {
   },
 
   publicRuntimeConfig: {
+    clientID: process.env.CLIENT_ID,
+    secret: process.env.SECRET,
     gtm: {
       id: process.env.GOOGLE_TAG_MANAGER_ID
     }

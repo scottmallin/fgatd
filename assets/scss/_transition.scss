@@ -1,0 +1,47 @@
+.page-leave-active {
+    transition: all 0.3s;
+    top: 0;
+    
+    @screen lg {
+        right: 0;
+    }
+}
+
+.page-enter-active {
+    transition: all 0.3s;
+    
+    @screen lg {
+        left: 0;
+    }
+}
+
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+}
+
+.page-leave-to {
+    top: 30px;
+
+    @screen lg {
+        top: 0;
+        right: 30px;
+    }
+}
+
+.page-enter {
+    bottom: 30px;
+
+    @screen lg {
+        bottom: 0;
+        left: 30px;
+    }
+}
+
+.page-enter-to {
+    bottom: 0;
+
+    @screen lg {
+        left: 0;
+    }
+}
