@@ -17,7 +17,7 @@
         <textarea name="message" id="form_message" rows="10" minlength="50" v-model="message" required></textarea>
       </div>
       <div class="form-row flex">
-        <button class="button button--primary" @click="submit()">Send</button>
+        <button class="button button--primary" type="submit">Send</button>
       </div>
     </form>
   </content-wrapper>
@@ -36,8 +36,7 @@ export default Vue.extend({
     return {
       name: "",
       email: "",
-      message: "",
-      messageBody: ""
+      message: ""
     }
   },
   components: { ContentWrapper },
@@ -57,9 +56,9 @@ export default Vue.extend({
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: this.encode({
             'form-name': 'contact',
-            'name': document.getElementById('form_name'),
-            'email': document.getElementById('form_email'),
-            'message': document.getElementById('form_message')
+            'name': this.name,
+            'email': this.email,
+            'message': this.message
           }),
         })
         .then(() => {
