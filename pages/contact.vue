@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <h1 class="page-heading">Contact us</h1>
-    <form name="contact" method="POST" action="/success" data-netlify="true">
+    <form name="contact" method="POST" action="/success/" data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submit" enctype="multipart/form-data">
       <input type="hidden" name="form-name" value="contact" />
       <div class="form-row">
         <label for="form_name">Name:</label>
@@ -42,24 +42,20 @@ export default Vue.extend({
   methods: {
     encode(data: any) {
       return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .map(key => encodeURIComponent(data[key].name) + "=" + encodeURIComponent(data[key].value))
         .join("&")
     },
-    submitForm() {
+    submitForm(e) {
 
-      this.$axios.$post('/success',
-        this.encode({
-          "form-name": "contact",
-          "name": this.name,
-          "email": this.email,
-          "message": this.message
-        }),
-        {
-          headers: { "Content-Type": "application/x-www-form-urlencoded" }
-        }
-      ).then(() => {
-        this.$router.push("/success")
-      })
+      fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: this.encode([...e.target.elements]),
+        })
+        .then(() => {
+          this.$router.push("/success")
+        })
+        .catch((error) => alert(error))
     }
   },
   head() {
