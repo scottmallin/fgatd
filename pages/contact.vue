@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <h1 class="page-heading">Contact us</h1>
-    <form name="contact" method="post" action="/success" netlify data-netlify-honeypot="bot-field" enctype="multipart/form-data" @submit.prevent="submit">
+    <form name="contact" method="post" action="/success" netlify data-netlify-honeypot="bot-field" @submit.prevent="submit">
       <input type="hidden" name="form-name" value="contact" />
       <input class="hidden" name="bot-field">
       <div class="form-row">
@@ -44,7 +44,7 @@ export default Vue.extend({
   methods: {
     encode(data: any) {
       return Object.keys(data)
-        .map(key => encodeURIComponent(data[key].name) + "=" + encodeURIComponent(data[key].value))
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&")
     },
     submit(e: any) {
@@ -55,11 +55,12 @@ export default Vue.extend({
       fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: this.encode([
-            document.getElementById('form_name'),
-            document.getElementById('form_email'),
-            document.getElementById('form_message')
-          ]),
+          body: this.encode({
+            'form-name': 'contact',
+            'name': document.getElementById('form_name'),
+            'email': document.getElementById('form_email'),
+            'message': document.getElementById('form_message')
+          }),
         })
         .then(() => {
           this.$router.push("/success")
