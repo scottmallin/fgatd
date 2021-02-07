@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <h1 class="page-heading">Contact us</h1>
-    <form name="contact" method="POST" action="/success" netlify data-netlify-honeypot="bot-field" enctype="multipart/form-data" @submit.prevent="submit">
+    <form name="contact" method="post" action="/success" netlify data-netlify-honeypot="bot-field" enctype="multipart/form-data" @submit.prevent="submit">
       <input type="hidden" name="form-name" value="contact" />
       <input class="hidden" name="bot-field">
       <div class="form-row">
