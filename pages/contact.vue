@@ -1,8 +1,9 @@
 <template>
   <content-wrapper>
     <h1 class="page-heading">Contact us</h1>
-    <form name="contact" method="POST" action="/success/" data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submit" enctype="multipart/form-data">
+    <form name="contact" method="POST" action="/success/" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" @submit.prevent="submit">
       <input type="hidden" name="form-name" value="contact" />
+      <input class="hidden" name="bot-field">
       <div class="form-row">
         <label for="form_name">Name:</label>
         <input type="text" name="name" id="form_name" v-model="name" required>
@@ -16,7 +17,7 @@
         <textarea name="message" id="form_message" rows="10" minlength="50" v-model="message" required></textarea>
       </div>
       <div class="form-row flex">
-        <button class="button button--primary" @click="submitForm()">Send</button>
+        <button class="button button--primary" @click="submit()">Send</button>
       </div>
     </form>
   </content-wrapper>
@@ -45,8 +46,10 @@ export default Vue.extend({
         .map(key => encodeURIComponent(data[key].name) + "=" + encodeURIComponent(data[key].value))
         .join("&")
     },
-    submitForm(e: any) {
-
+    submit(e: any) {
+      if ( this.name.length == 0 || this.email.length < 6 || this.message.length == 0 ) {
+        return false
+      }
       fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
