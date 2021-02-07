@@ -46,7 +46,7 @@ export default Vue.extend({
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&")
     },
-    submit(e: any) {
+    submit() {
       if ( this.name.length == 0 || this.email.length < 6 || this.message.length == 0 ) {
         return false
       }
