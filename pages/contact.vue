@@ -36,7 +36,8 @@ export default Vue.extend({
     return {
       name: "",
       email: "",
-      message: ""
+      message: "",
+      messageBody: ""
     }
   },
   components: { ContentWrapper },
@@ -50,10 +51,15 @@ export default Vue.extend({
       if ( this.name.length == 0 || this.email.length < 6 || this.message.length == 0 ) {
         return false
       }
+
       fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: this.encode([...e.target.elements]),
+          body: this.encode([
+            document.getElementById('form_name'),
+            document.getElementById('form_email'),
+            document.getElementById('form_message')
+          ]),
         })
         .then(() => {
           this.$router.push("/success")
