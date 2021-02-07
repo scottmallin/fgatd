@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="contact" method="POST" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <input class="hidden" name="bot-field">
+        <div class="form-row">
+          <label for="form_name">Name:</label>
+          <input type="text" name="name" id="form_name" v-model="name" required>
+        </div>
+        <div class="form-row">
+          <label for="form_email">Email:</label>
+          <input type="email" name="email" id="form_email" v-model="email" required>
+        </div>
+        <div class="form-row">
+          <label for="form_message">Message:</label>
+          <textarea name="message" id="form_message" rows="10" minlength="50" v-model="message" required></textarea>
+        </div>
+        <div class="form-row flex">
+          <button class="button button--primary">Send</button>
+        </div>
+      </form>
+</body>
+</html>
