@@ -45,7 +45,7 @@ export default Vue.extend({
         .map(key => encodeURIComponent(data[key].name) + "=" + encodeURIComponent(data[key].value))
         .join("&")
     },
-    submitForm(e) {
+    submitForm(e: any) {
 
       fetch('/', {
           method: 'POST',
