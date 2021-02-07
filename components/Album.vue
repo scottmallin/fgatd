@@ -1,7 +1,7 @@
 <template>
     <div class="single-release lg:col-6 col-12">
         <div class="single-release__wrapper">
-            <img :src="artwork" :alt="title">
+            <nuxt-img :src="artwork" :alt="title" loading="lazy" width="768" />
             <div class="single-release__info">
                 <div>
                     <h3 class="single-release__title">{{ title }}</h3>

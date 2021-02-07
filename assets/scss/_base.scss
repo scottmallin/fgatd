@@ -68,6 +68,7 @@ p {
         @apply bg-dark;
         @apply py-3;
         @apply text-sm;
+        @apply relative;
 
         grid-area: footer;
     }

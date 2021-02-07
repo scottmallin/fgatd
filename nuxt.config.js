@@ -16,7 +16,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'The official Frank Grimes & The Disasters website' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -41,7 +41,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,10 +54,7 @@ export default {
 
   pageTransition: {
     name: 'page',
-    mode: 'out-in',
-    beforeEnter (el) {
-      console.log('Before enter...');
-    }
+    mode: 'out-in'
   },
 
   gtm: {
@@ -65,9 +63,23 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    common: {
-      'Client-ID': 'ly02f7bvldlkfnpf9wr453c55nmdhl',
-      'Secret': 'rny3pkbw5beqhzw6kohben5ioixnqz'
+  },
+
+  image: {
+    sizes: [768, 1200]
+  },
+
+  pwa: {
+    icon: {
+      sizes: [72, 96, 120, 128, 144, 152, 180, 192, 384, 512]
+    },
+    manifest: {
+      name: 'Frank Grimes & The Disasters',
+      short_name: 'FGATD',
+      description: 'Punk Rock from Barnsley, South Yorkshire.',
+      background_color: '#151a20',
+      lang: 'en',
+      useWebmanifestExtension: false
     }
   },
 

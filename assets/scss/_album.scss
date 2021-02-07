@@ -7,6 +7,8 @@
         @apply relative;
         @apply border;
         @apply border-primary;
+
+        aspect-ratio: 1 / 1;
     }
 
     &__info {
