@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/form.html"
+  to = "/contact"
+  status = 301
+  force = true
